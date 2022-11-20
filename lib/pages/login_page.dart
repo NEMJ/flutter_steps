@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:primeiros_passos/components/login/custom_login_button_component.dart';
 import 'package:primeiros_passos/controllers/login_controller.dart';
+import 'package:primeiros_passos/widgets/custom_text_field_widget.dart';
 
 class LoginPage extends StatelessWidget {
   final LoginController _controller = LoginController();
@@ -17,44 +19,17 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.people, size: MediaQuery.of(context).size.height * 0.2),
-              TextField(
-                decoration: const InputDecoration(
-                  label: Text('Login'),
-                ),
+              CustomTextFieldWidget(
+                label: 'Login',
                 onChanged: _controller.setLogin,
               ),
-              TextField(
-                decoration: const InputDecoration(
-                  label: Text('Senha'),
-                ),
-                obscureText: true,
+              CustomTextFieldWidget(
+                label: 'Senha',
                 onChanged: _controller.setPass,
+                obscureText: true,
               ),
               const SizedBox(height: 15),
-              ValueListenableBuilder<bool>(
-                valueListenable: _controller.inLoader,
-                builder: (_, inLoader, __) => inLoader
-                ? const CircularProgressIndicator()
-                : ElevatedButton(
-                    child: const Text('Login'),
-                    onPressed: () {
-                      _controller.auth().then(
-                        (result) {
-                        if(result) {
-                          Navigator.of(context).pushReplacementNamed('/home');
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: const Text('Falha ao realizar login'),
-                              duration: const Duration(seconds: 3),
-                            ),
-                          );
-                        }
-                      },
-                    );
-                  },
-                ),                
-              ),
+              CustomLoginButtonComponent(loginController: _controller),
             ],
           ),
         ),
