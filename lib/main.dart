@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:primeiros_passos/pages/home_page.dart';
-import 'package:primeiros_passos/pages/splash_page.dart';
-import 'package:primeiros_passos/pages/login_page.dart';
+import '../15_login - 18_repository/pages/home_page.dart';
+import '../15_login - 18_repository/pages/splash_page.dart';
+import '../15_login - 18_repository/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());

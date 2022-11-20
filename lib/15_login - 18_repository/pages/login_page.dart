@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:primeiros_passos/components/login/custom_login_button_component.dart';
-import 'package:primeiros_passos/controllers/login_controller.dart';
-import 'package:primeiros_passos/widgets/custom_text_field_widget.dart';
+import '../components/login/custom_login_button_component.dart';
+import '../controllers/login_controller.dart';
+import '../widgets/custom_text_field_widget.dart';
 
 class LoginPage extends StatelessWidget {
   final LoginController _controller = LoginController();
