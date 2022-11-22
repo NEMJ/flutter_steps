@@ -3,6 +3,7 @@ import '../repositories/home_repository_imp.dart';
 import '../models/post_model.dart';
 import '../repositories/home_repository_mock.dart';
 import '../controllers/home_controller.dart';
+import '../services/prefs_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -26,6 +27,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Home Page'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              PrefsService.logout();
+              Navigator.of(context).pushNamedAndRemoveUntil('/login', (_) => true);
+            }
+          ),
+        ],
       ),
       body: ValueListenableBuilder<List<PostModel>>(
         valueListenable: _controller.posts,
@@ -36,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (_, index) => ListTile(
               leading: Text(list[index].id.toString()),
               title: Text(list[index].title),
-              trailing: Icon(Icons.arrow_forward),
+              trailing: const Icon(Icons.arrow_forward),
               onTap: () => Navigator.of(context).pushNamed(
                 '/details',
                 arguments: list[index],

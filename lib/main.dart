@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:primeiros_passos/15_login%20-%2018_repository/pages/details_page.dart';
-import '../15_login - 18_repository/pages/home_page.dart';
-import '../15_login - 18_repository/pages/splash_page.dart';
-import '../15_login - 18_repository/pages/login_page.dart';
+import '../15_login - 20_SharedPreferences/pages/details_page.dart';
+import '../15_login - 20_SharedPreferences/pages/home_page.dart';
+import '../15_login - 20_SharedPreferences/pages/splash_page.dart';
+import '../15_login - 20_SharedPreferences/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
