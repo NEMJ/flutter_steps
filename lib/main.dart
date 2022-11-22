@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:primeiros_passos/15_login%20-%2018_repository/pages/details_page.dart';
 import '../15_login - 18_repository/pages/home_page.dart';
 import '../15_login - 18_repository/pages/splash_page.dart';
 import '../15_login - 18_repository/pages/login_page.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/splash' : (_) => const SpashPage(),
         '/login' : (_) => LoginPage(),
         '/home' : (_) => const HomePage(),
+        '/details' : (_) => const DetailsPage(),
       }
     );
   }
