@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:primeiros_passos/15_login - 18_repository/models/post_model.dart';
+import 'package:primeiros_passos/15_login - 20_SharedPreferences/models/post_model.dart';
 import 'home_repository.dart';
 
 class HomeRepositoryImp implements HomeRepository {
